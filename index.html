@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ResolveX | Smart Helpdesk</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="brand">
+        <div class="logo">Resolve<span>X</span></div>
+        <div class="brand-line"></div>
+        <p>Smart Helpdesk Ticket System</p>
+      </div>
+      <div class="online"><span></span> System Online</div>
+    </header>
+    <main class="container">
+      <section class="welcome">
+        <div>
+          <h1>Helpdesk Dashboard</h1>
+          <p>Manage and prioritize support tickets easily.</p>
+        </div>
+        <div class="date-label">TICKET MANAGEMENT</div>
+      </section>
+      <section class="stats">
+        <div class="stat-card blue">
+          <div class="stat-top">
+            <span>Total Tickets</span><span class="stat-icon">▤</span>
+          </div>
+          <h2 id="totalTickets">0</h2>
+          <p>All submitted tickets</p>
+        </div>
+        <div class="stat-card red">
+          <div class="stat-top">
+            <span>High / Critical</span><span class="stat-icon">!</span>
+          </div>
+          <h2 id="highTickets">0</h2>
+          <p>Needs quick attention</p>
+        </div>
+        <div class="stat-card orange">
+          <div class="stat-top">
+            <span>Pending</span><span class="stat-icon">◷</span>
+          </div>
+          <h2 id="pendingTickets">0</h2>
+          <p>Awaiting resolution</p>
+        </div>
+        <div class="stat-card green">
+          <div class="stat-top">
+            <span>Resolved</span><span class="stat-icon">✓</span>
+          </div>
+          <h2 id="resolvedTickets">0</h2>
+          <p>Successfully completed</p>
+        </div>
+      </section>
+      <section class="workspace">
+        <aside class="panel form-panel">
+          <div class="section-heading">
+            <div class="heading-icon">+</div>
+            <div>
+              <h2>Create New Ticket</h2>
+              <p>Submit a new support request.</p>
+            </div>
+          </div>
+          <form id="ticketForm">
+            <label for="name">Your Name</label
+            ><input
+              id="name"
+              type="text"
+              placeholder="Enter your name"
+              required
+            />
+            <label for="title">Ticket Title</label
+            ><input
+              id="title"
+              type="text"
+              placeholder="e.g. Computer not working"
+              required
+            />
+            <label for="description">Description</label
+            ><textarea
+              id="description"
+              placeholder="Describe the issue..."
+              required
+            ></textarea>
+            <label for="priority">Priority Level</label>
+            <select id="priority">
+              <option value="Low">Low</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="High">High</option>
+              <option value="Critical">Critical</option>
+            </select>
+            <button type="submit" class="primary-btn">+ Submit Ticket</button>
+          </form>
+          <div class="form-note">
+            <span>ⓘ</span> Higher-priority tickets appear first.
+          </div>
+        </aside>
+        <section class="panel ticket-panel">
+          <div class="ticket-heading">
+            <div>
+              <h2>Support Tickets</h2>
+              <p>View and manage all support requests.</p>
+            </div>
+            <div class="search-box">
+              <span>⌕</span
+              ><input
+                id="searchInput"
+                type="search"
+                placeholder="Search tickets..."
+              />
+            </div>
+          </div>
+          <div class="filters">
+            <button type="button" class="filter-btn active" data-filter="All">
+              All Tickets
+            </button>
+            <button type="button" class="filter-btn" data-filter="Open">
+              Open
+            </button>
+            <button type="button" class="filter-btn" data-filter="In Progress">
+              In Progress
+            </button>
+            <button type="button" class="filter-btn" data-filter="Resolved">
+              Resolved
+            </button>
+          </div>
+          <div id="ticketList"></div>
+        </section>
+      </section>
+      <footer><span>ResolveX</span> · Smart Helpdesk Ticket System</footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
